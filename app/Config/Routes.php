@@ -34,6 +34,9 @@ $routes->get('/pages', 'Pages::index');
 $routes->get('/pages/about', 'Pages::about');
 $routes->get('/pages/contact', 'Pages::contact');
 
+$routes->get('/chars', 'Chars::index');
+$routes->get('/chars/(:segment)', 'Chars::detail/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
