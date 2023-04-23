@@ -9,9 +9,7 @@ class Pages extends BaseController
         $data =[
             'title' => 'Home | Code Igniter 4 App'
         ];
-        echo view('layout/header', $data);
-        echo view('pages/home');
-        echo view('layout/footer');
+        return view('pages/home', $data);
     } 
 
     public function about()
@@ -19,8 +17,26 @@ class Pages extends BaseController
         $data =[
             'title' => 'About Me | Code Igniter 4 App'
         ];
-        echo view('layout/header', $data);
-        echo view('pages/about');
-        echo view('layout/footer');
+        echo view('pages/about', $data);
+    }
+
+    public function contact()
+    {
+        $data =[
+            'title' => 'Contact Us',
+            'alamat' => [
+                [
+                    'tipe' => 'Rumah',
+                    'alamat' => 'Yasmin',
+                    'kota' => 'Bogor'
+                ],
+                [
+                    'tipe' => 'Kantor',
+                    'alamat' => 'BCC',
+                    'kota' => 'Bandung'
+                ]
+            ]
+        ];
+        echo view('pages/contact', $data);
     }
 }
